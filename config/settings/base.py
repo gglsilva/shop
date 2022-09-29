@@ -21,6 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # assets, media, database, and venv will be located in this directory
 ASSETS_MEDIA_DIR = os.path.abspath(os.path.join(BASE_DIR, '..'))
 
+# APPS_DIR points to the core package (project/src/apps).
+# All custom apps and newly created apps will be located in this directory.
+APPS_DIR = os.path.join(BASE_DIR, 'apps')
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -41,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # My Apps
     'apps.core',
+    'apps.shop.apps.ShopConfig',
     # 3th party apps
     'debug_toolbar',
 ]
@@ -131,9 +137,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static_files')  # project/core/static_files
-]
+
 STATIC_ROOT = os.path.join(ASSETS_MEDIA_DIR, 'assets')  # project/assets
 
 # Media files

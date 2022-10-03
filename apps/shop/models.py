@@ -1,13 +1,5 @@
-from email.mime import image
-from email.policy import default
-from enum import auto, unique
-from pyexpat import model
-from tabnanny import verbose
-from turtle import update
-from unicodedata import category, decimal
-from venv import create
 from django.db import models
-
+from django.urls import reverse
 
 class Category(models.Model):
     name = models.CharField(
@@ -28,6 +20,11 @@ class Category(models.Model):
     def __str__(self) -> str:
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('shop:product_list_by_category',
+                       args=[self.slug])
+
+    
     
 class Product(models.Model):
     category = models.ForeignKey(
@@ -70,3 +67,7 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('shop:product_detail',
+                       args=[self.id, self.slug])

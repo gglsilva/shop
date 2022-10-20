@@ -1,5 +1,3 @@
-from turtle import update
-from zoneinfo import available_timezones
 from django.contrib import admin
 from .models import Category, Product
 

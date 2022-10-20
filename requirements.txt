@@ -1,6 +1,17 @@
 asgiref==3.5.2
+cfgv==3.3.1
+distlib==0.3.6
 Django==4.1.1
 django-debug-toolbar==3.7.0
 django-decouple==2.1
+filelock==3.8.0
+identify==2.5.6
+nodeenv==1.7.0
+Pillow==9.2.0
+platformdirs==2.5.2
+pre-commit==2.20.0
+PyYAML==6.0
 sqlparse==0.4.3
+toml==0.10.2
 tzdata==2022.4
+virtualenv==20.16.5

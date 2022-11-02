@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # My Apps
     'apps.core',
     'apps.shop.apps.ShopConfig',
+    'apps.cart.apps.CartConfig',
     # 3th party apps
     'debug_toolbar',
 ]
@@ -148,3 +149,6 @@ MEDIA_ROOT = os.path.join(ASSETS_MEDIA_DIR, 'media')  # project/media
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Chave que armazena o carrinho na seção do usuário
+CART_SESSION_ID = 'cart'

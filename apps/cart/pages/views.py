@@ -1,9 +1,9 @@
-from itertools import product
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_POST
-from shop.models import Product
-from ..cart import Cart
+#rom shop.models import Product
+from apps.shop.models import Product 
 from ..forms import CartAddProductForm
+from ..cart import Cart
 
 
 @require_POST

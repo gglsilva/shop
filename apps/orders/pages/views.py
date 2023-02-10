@@ -2,14 +2,14 @@ from django.shortcuts import render
 from ..models import OrderItem
 from ..forms import OrderCreateForm
 from apps.cart.cart import Cart
-from ..tasks import order_created
+from apps.orders.tasks import order_created
 
 
 # Create your views here.
 def order_create(request):
     cart = Cart(request)
     if request.method == 'POST':
-        form = OrderCreateForm(request.Post)
+        form = OrderCreateForm(request.POST)
         if form.is_valid():
             order = form.save()
             for item in cart:

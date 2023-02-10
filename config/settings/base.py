@@ -15,7 +15,8 @@ from decouple import config
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
 
 # ASSETS_MEDIA_DIR points to the top level directory (one directory up from BASE_DIR)
 # assets, media, database, and venv will be located in this directory
